@@ -14,12 +14,19 @@ cc_library(
 	defines = [
 	],
 	deps = [
-		"@com_github_bazelboost_utility//:utility",
-		"@com_github_bazelboost_config//:config",
+		"@com_github_bazelboost_core//:core",
 		"@com_github_bazelboost_mpl//:mpl",
+		"@com_github_bazelboost_config//:config",
 		"@com_github_bazelboost_assert//:assert",
-		"@com_github_bazelboost_static_assert//:static_assert",
 		"@com_github_bazelboost_concept_check//:concept_check",
-		"@com_github_bazelboost_type_traits//:type_traits"
+		"@com_github_bazelboost_static_assert//:static_assert",
+		"@com_github_bazelboost_iterator//:iterator",
+		"@com_github_bazelboost_type_traits//:type_traits",
+		"@com_github_bazelboost_date_time//:date_time",
+		"@com_github_bazelboost_move//:move",
+		"@com_github_bazelboost_container//:container",
+		"@com_github_bazelboost_utility//:utility",
+		"@com_github_bazelboost_rational//:rational",
+		"@com_github_bazelboost_detail//:detail"
 	],
 )
