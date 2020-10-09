@@ -1,0 +1,22 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+_public_hdrs = [
+    "include/boost/*.hpp",
+    "include/boost/icl/*.hpp",
+    "include/boost/icl/concept/*.hpp",
+    "include/boost/icl/predicates/*.hpp",
+    "include/boost/icl/type_traits/*.hpp",
+]
+
+cc_library(
+    name = "icl_internal",
+    hdrs = glob(["include/boost/**/*.hpp"], exclude = _public_hdrs),
+)
+
+cc_library(
+    name = "icl",
+    visibility = ["//visibility:public"],
+    includes = ["include"],
+    hdrs = glob(_public_hdrs),
+    deps = [":icl_internal"],
+)
